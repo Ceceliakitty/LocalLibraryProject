@@ -2,16 +2,20 @@ function getTotalBooksCount(books) {
   return books.length;
 }
 
-
 function getTotalAccountsCount(accounts) {
+  //  Use reduce on this code on line 7
   return accounts.length;
 }
 
-
 function getBooksBorrowedCount(books) {
-  return books.filter(book => !book.borrows[0].returned).length;
+  return books.filter(helper).length;
 }
 
+const helper = (book) => {
+  //distructuing borrows and using veribal on line 16
+  // make .returned if it is ture return ture if it is fult returned fult (?)
+  return !book.borrows[0].returned;
+};
 
 // Tbis is a helper function that's called by other functions inside this file. You don't have to edit it.
 function _sortObjectByValues(obj) {
